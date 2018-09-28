@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
         contentBase: './dist'
     },
     resolve: {
-        extensions: ['*', '.js', '.vue', '.json'],
+        extensions: ['*', '.js', '.vue'],
         modules: [path.join(__dirname, 'src'), 'node_modules'],// add a directory search src/* over node_modules/
     },
     module: {
@@ -31,7 +32,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({template: './index.html'}),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new CleanWebpackPlugin(['dist'])
     ],
     mode: 'development'
 };

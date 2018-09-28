@@ -1,7 +1,7 @@
 <template>
     <div>
         <hello-world></hello-world>
-        <p>{{message}}</p>
+        <p class="message">{{message}}</p>
     </div>
 </template>
 
@@ -21,4 +21,7 @@ export default {
 </script>
 
 <style>
+.message {
+    text-align: center;
+}
 </style>

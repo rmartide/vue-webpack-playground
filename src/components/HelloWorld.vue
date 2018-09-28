@@ -1,5 +1,5 @@
 <template>
-    <h1>{{message}}</h1>
+    <h1 class="header">{{message}}</h1>
 </template>
 
 <script>
@@ -13,6 +13,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    $header-color: rgb(39, 40, 87);
 
+    .header {
+        color: $header-color;
+        text-align: center;
+    }
 </style>

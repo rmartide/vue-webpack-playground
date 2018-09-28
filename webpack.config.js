@@ -18,20 +18,43 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.vue$/, use: 'vue-loader' },
+            {
+                test: /\.vue$/,
+                use: 'vue-loader'
+            },
             {
                 test: /\.css$/,
                 use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' },
-                    { loader: 'sass-loader' }
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "sass-loader" // compiles Sass to CSS
+                    }
                 ]
             },
-            { test: /\.js$/, use: 'babel-loader', exclude:/node_modules/}
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "sass-loader" // compiles Sass to CSS
+                    }
+                ]
+            },
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({template: './index.html'}),
+        new HtmlWebpackPlugin({ template: './index.html' }),
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(['dist'])
     ],

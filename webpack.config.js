@@ -50,13 +50,18 @@ module.exports = {
                     }
                 ]
             },
-            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
+            {
+                test: /\.js$/,
+                use: {
+                    loader: "babel-loader"
+                },
+                exclude: /node_modules/
+            }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({ template: './index.html' }),
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(['dist'])
-    ],
-    mode: 'development'
+    ]
 };

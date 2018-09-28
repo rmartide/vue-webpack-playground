@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "start": "webpack-dev-server --mode development --open ",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",

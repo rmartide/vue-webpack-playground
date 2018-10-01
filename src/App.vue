@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from 'components/HelloWorld.vue';
 export default {
     name: 'App',
     data() {
         return {
-            message: "I'm App yap"
+            message: "We gucci"
         }
     },
     components: {

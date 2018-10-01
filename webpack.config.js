@@ -29,32 +29,8 @@ module.exports = env => {
                     use: 'vue-loader'
                 },
                 {
-                    test: /\.css$/,
-                    use: [
-                        {
-                            loader: "style-loader" // creates style nodes from JS strings
-                        },
-                        {
-                            loader: "css-loader" // translates CSS into CommonJS
-                        },
-                        {
-                            loader: "sass-loader" // compiles Sass to CSS
-                        }
-                    ]
-                },
-                {
-                    test: /\.scss$/,
-                    use: [
-                        {
-                            loader: "style-loader" // creates style nodes from JS strings
-                        },
-                        {
-                            loader: "css-loader" // translates CSS into CommonJS
-                        },
-                        {
-                            loader: "sass-loader" // compiles Sass to CSS
-                        }
-                    ]
+                    test: /\.css|scss|sass$/,
+                    use: ["style-loader", "css-loader", "sass-loader"]
                 },
                 {
                     test: /\.js$/,
